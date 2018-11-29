@@ -20,6 +20,7 @@ client.on('message', msg => {
   if(msg.embeds.length > 0){
   	console.log(`    >Message includes embedded content`);
   	deleteSendBooper(msg);
+  	return;
   } 
   let words = msg_str.split(" ");
   console.log(`	   >Checking Message Content`);
@@ -37,6 +38,7 @@ client.on('message', msg => {
   	if(tempWord.length > (boopers.length-1) * 6){
   		console.log(`	>Message includes more than boopers`);
   		deleteSendBooper(msg);
+  		return;
   	}
   }
 });
